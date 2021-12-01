@@ -18,6 +18,8 @@
 		550FD2D02754C42500F5C528 /* WavyTabBarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FD2CF2754C42500F5C528 /* WavyTabBarUITestsLaunchTests.swift */; };
 		550FD2DD2754C45C00F5C528 /* WavyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FD2DC2754C45C00F5C528 /* WavyTabBar.swift */; };
 		550FD2DF275501B100F5C528 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FD2DE275501B100F5C528 /* ModalViewController.swift */; };
+		550FD32827575C1E00F5C528 /* UIView+WavyTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FD32727575C1D00F5C528 /* UIView+WavyTop.swift */; };
+		550FD32A27575C6A00F5C528 /* WavyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FD32927575C6A00F5C528 /* WavyUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		550FD2CF2754C42500F5C528 /* WavyTabBarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyTabBarUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		550FD2DC2754C45C00F5C528 /* WavyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyTabBar.swift; sourceTree = "<group>"; };
 		550FD2DE275501B100F5C528 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		550FD32727575C1D00F5C528 /* UIView+WavyTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+WavyTop.swift"; sourceTree = "<group>"; };
+		550FD32927575C6A00F5C528 /* WavyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +110,10 @@
 				550FD2AC2754C42100F5C528 /* AppDelegate.swift */,
 				550FD2AE2754C42100F5C528 /* SceneDelegate.swift */,
 				550FD2DC2754C45C00F5C528 /* WavyTabBar.swift */,
+				550FD32727575C1D00F5C528 /* UIView+WavyTop.swift */,
 				550FD2B02754C42100F5C528 /* ViewController.swift */,
 				550FD2DE275501B100F5C528 /* ModalViewController.swift */,
+				550FD32927575C6A00F5C528 /* WavyUIView.swift */,
 				550FD2B22754C42100F5C528 /* Main.storyboard */,
 				550FD2B52754C42500F5C528 /* Assets.xcassets */,
 				550FD2B72754C42500F5C528 /* LaunchScreen.storyboard */,
@@ -267,6 +273,8 @@
 				550FD2B12754C42100F5C528 /* ViewController.swift in Sources */,
 				550FD2DF275501B100F5C528 /* ModalViewController.swift in Sources */,
 				550FD2AD2754C42100F5C528 /* AppDelegate.swift in Sources */,
+				550FD32A27575C6A00F5C528 /* WavyUIView.swift in Sources */,
+				550FD32827575C1E00F5C528 /* UIView+WavyTop.swift in Sources */,
 				550FD2DD2754C45C00F5C528 /* WavyTabBar.swift in Sources */,
 				550FD2AF2754C42100F5C528 /* SceneDelegate.swift in Sources */,
 			);

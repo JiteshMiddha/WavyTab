@@ -8,31 +8,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WavyTabBar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="WavyTabBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FT3-wx-Hyh">
-                                <rect key="frame" x="136" y="363" width="142" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FT3-wx-Hyh">
+                                <rect key="frame" x="132" y="395" width="150" height="67"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="B24-5d-3dY"/>
+                                    <constraint firstAttribute="width" constant="150" id="xuC-XQ-20U"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Refresh">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="26"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Z2d-DV-5Cp" kind="presentation" modalPresentationStyle="fullScreen" id="tyK-3c-eNH"/>
+                                    <action selector="didPressRefreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dok-gK-C4p"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
                             <constraint firstItem="FT3-wx-Hyh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fI5-uD-j6X"/>
                             <constraint firstItem="FT3-wx-Hyh" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gKT-CO-sU6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="3qG-Aa-248"/>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="3qG-Aa-248"/>
+                    <connections>
+                        <segue destination="Z2d-DV-5Cp" kind="presentation" identifier="ToModalSegue" id="InV-pz-biM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,22 +53,38 @@
         <scene sceneID="9M2-L9-Fz2">
             <objects>
                 <viewController id="Z2d-DV-5Cp" customClass="ModalViewController" customModule="WavyTabBar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Zrb-ON-zLF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="view" contentMode="scaleToFill" id="Zrb-ON-zLF" customClass="WavyUIView" customModule="WavyTabBar" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPm-SB-IRs">
-                                <rect key="frame" x="97" y="169" width="95" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPm-SB-IRs">
+                                <rect key="frame" x="20" y="0.0" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="5q4-hh-Xsi"/>
+                                    <constraint firstAttribute="height" constant="70" id="kX2-UC-Rpp"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="X"/>
                                 <connections>
                                     <action selector="disPressCloseButton:" destination="Z2d-DV-5Cp" eventType="touchUpInside" id="d8s-gZ-hVv"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stockPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="YVc-8x-zl6">
+                                <rect key="frame" x="67" y="214" width="280" height="380"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="380" id="5Gd-f0-shE"/>
+                                    <constraint firstAttribute="width" constant="280" id="yhd-Xw-DQW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0gN-Xr-ymG"/>
-                        <color key="backgroundColor" systemColor="tintColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="YVc-8x-zl6" firstAttribute="centerX" secondItem="0gN-Xr-ymG" secondAttribute="centerX" id="hGp-zW-aLz"/>
+                            <constraint firstItem="nPm-SB-IRs" firstAttribute="top" secondItem="0gN-Xr-ymG" secondAttribute="top" id="nLe-Qt-ORv"/>
+                            <constraint firstItem="YVc-8x-zl6" firstAttribute="centerY" secondItem="0gN-Xr-ymG" secondAttribute="centerY" id="pgn-eK-Akn"/>
+                            <constraint firstItem="nPm-SB-IRs" firstAttribute="leading" secondItem="0gN-Xr-ymG" secondAttribute="leading" constant="20" id="yrm-6H-IeK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEF-So-enQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -71,28 +98,47 @@
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pky-eQ-Afk" customClass="WavyTabBar" customModule="WavyTabBar" customModuleProvider="target">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="44U-81-tZ5"/>
+                        <segue destination="ZXI-bD-Xkh" kind="relationship" relationship="viewControllers" id="yRf-qQ-EnW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quf-Dr-ODb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="fuB-Pm-B3a">
+            <objects>
+                <viewController id="ZXI-bD-Xkh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ioo-Sz-L5C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="d8S-MX-taK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="etJ-Zl-VSv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LKg-iO-xWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939" y="790"/>
+        </scene>
     </scenes>
-    <designables>
-        <designable name="pky-eQ-Afk">
-            <size key="intrinsicContentSize" width="-1" height="83"/>
-        </designable>
-    </designables>
     <resources>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="stockPhoto" width="281.5" height="400"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="tintColor">
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

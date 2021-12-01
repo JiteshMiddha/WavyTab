@@ -1,16 +1,16 @@
 //
-//  WavyTabBar.swift
+//  WavyUIView.swift
 //  WavyTabBar
-//
-//  Created by Jitesh Middha on 29/11/21.
+//  WavyUIView - This View can be used where we need wavy top design
+
+//  Created by Jitesh Middha on 01/12/21.
 //
 
 import UIKit
 
-class WavyTabBar: UITabBar {
-
+class WavyUIView: UIView {
   private var shapeLayer: CALayer?
-  
+
   override func draw(_ rect: CGRect) {
     
     let shape = self.addShape()
